@@ -15,6 +15,11 @@ echo "fi" >> ~/.profile
 # Configuration application
 source ~/.profile
 
+# Adding a folder and setting up a repo
+mkdir ~/bin
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+
 # Entering github account data
 read -p "Enter your email:" email
 read -p "Enter your github nickname:" nick
