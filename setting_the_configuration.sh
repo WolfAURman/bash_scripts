@@ -39,6 +39,9 @@ export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/mnt/ccache
 ccache -M $sizeG -F 0
 
-#disable swap
+# Disable swap
 sudo swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+# Reboot system
+sudo reboot
