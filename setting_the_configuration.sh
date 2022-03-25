@@ -30,14 +30,14 @@ git config --global user.name "$nick"
 
 # Cache configuration
 read -p "Enter your nickname user:" user
-
+read -p "Enter the volume you want to allocate for the cache:" size
 # Create cache
 sudo mkdir /mnt/ccache
 sudo mount --bind /home/$user/.cache/ccache /mnt/ccache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/mnt/ccache
-ccache -M 100G -F 0
+ccache -M $sizeG -F 0
 
 #disable swap
 sudo swapoff -a
